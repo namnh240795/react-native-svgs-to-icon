@@ -1,0 +1,44 @@
+Arguments: 
+  /usr/local/Cellar/node/20.1.0/bin/node /usr/local/bin/yarn add --dev ts-jest tslint tslint-config-prettier typescript @changeset/cli
+
+PATH: 
+  /Users/taichi/.rvm/gems/ruby-2.7.6/bin:/Users/taichi/.rvm/gems/ruby-2.7.6@global/bin:/Users/taichi/.rvm/rubies/ruby-2.7.6/bin:/Users/taichi/Downloads/google-cloud-sdk/bin:/Users/taichi/.local/share/solana/install/active_release/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Users/taichi/.rvm/gems/ruby-2.7.6/bin:/Users/taichi/.rvm/gems/ruby-2.7.6@global/bin:/Users/taichi/.rvm/rubies/ruby-2.7.6/bin:/Users/taichi/Downloads/google-cloud-sdk/bin:/Users/taichi/.local/share/solana/install/active_release/bin:/Users/taichi/.cargo/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/taichi/development/flutter/bin:/Users/taichi/Library/Android/sdk/emulator:/Users/taichi/Library/Android/sdk/tools:/Users/taichi/Library/Android/sdk/tools/bin:/Users/taichi/Library/Android/sdk/platform-tools:/Users/taichi/go/bin:/usr/local/opt/go/libexec/bin:/Users/taichi/.rvm/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/taichi/development/flutter/bin:/Users/taichi/Library/Android/sdk/emulator:/Users/taichi/Library/Android/sdk/tools:/Users/taichi/Library/Android/sdk/tools/bin:/Users/taichi/Library/Android/sdk/platform-tools:/Users/taichi/go/bin:/usr/local/opt/go/libexec/bin:/Users/taichi/.rvm/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.1.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@changeset%2fcli: Not found
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:511:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:511:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:625:28)
+      at IncomingMessage.emit (node:events:523:35)
+      at endReadableNT (node:internal/streams/readable:1367:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "react-native-svgs-to-icon",
+    "version": "1.0.0",
+    "description": "Package to generate icons",
+    "main": "index.js",
+    "repository": "https://github.com/namnh240795/react-native-svgs-to-icon.git",
+    "author": "Nam Nguyen <namnh240795@gmail.com>",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

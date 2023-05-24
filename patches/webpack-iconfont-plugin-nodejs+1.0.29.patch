@@ -1,0 +1,25 @@
+diff --git a/node_modules/webpack-iconfont-plugin-nodejs/src/glyphs2cssAndHtml.js b/node_modules/webpack-iconfont-plugin-nodejs/src/glyphs2cssAndHtml.js
+index db23c18..1d423be 100644
+--- a/node_modules/webpack-iconfont-plugin-nodejs/src/glyphs2cssAndHtml.js
++++ b/node_modules/webpack-iconfont-plugin-nodejs/src/glyphs2cssAndHtml.js
+@@ -58,15 +58,11 @@ module.exports = function (fileMark, glyphDatas, options) {
+         cssHtml.html = render(htmlTemplateFile, nunjucksOptions)
+     }
+     if (options.jsOutput) {
+-        var json = JSON.stringify(glyphDatas.map(g => {
+-            return {
+-                name: g.metadata.name,
+-                unicode: g.metadata.unicode[0].charCodeAt(0).toString(16),
+-                svg: g.contents,
+-            }
+-        }), null, 4)
+-        var prefix = options.jsPrefix || '/* eslint-disable */\n';
+-        cssHtml.js = prefix + 'export default ' + json + '\n'
++        var json = {}
++		glyphDatas.forEach(g => {
++			json[g.metadata.name] = g.metadata.unicode[0].codePointAt(0)
++        })
++        cssHtml.js = JSON.stringify(json,null,2)
+     }
+     if (options.namesOutput) {
+         cssHtml.names = glyphDatas.map(g => g.metadata.name).join('\n')
