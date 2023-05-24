@@ -1,7 +1,19 @@
 # react-native-svgs-to-icon
 
+[![npm version](https://badge.fury.io/js/react-native-svgs-to-icon.svg)](https://badge.fury.io/js/react-native-svgs-to-icon) [![npm](https://img.shields.io/npm/dt/react-native-svgs-to-icon.svg?logo=npm)](https://www.npmjs.com/package/react-native-svgs-to-icon) [![npm](https://img.shields.io/bundlephobia/minzip/react-native-svgs-to-icon)](https://www.npmjs.com/package/react-native-svgs-to-icon)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-)
+
+[Example](https://github.com/namnh240795/react-native-svgs-to-icon-example)
+
+### Installation
+
+[![NPM](https://nodei.co/npm/react-native-svgs-to-icon.png?compact=true)](https://nodei.co/npm/react-native-svgs-to-icon/)
+
 - Add peer dependencies
-  `yarn add -D patch-package webpack-iconfont-plugin-nodejs react-native-asset`
+
+  ```
+  yarn add -D patch-package webpack-iconfont-plugin-nodejs react-native-asset
+  ```
 
 - Add this to `react-native.config.js`
 
