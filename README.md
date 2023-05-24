@@ -1,49 +1,35 @@
-# Todo
-
-- add cli
-- add typescripts
-- add default folder and example
-- add changesets and github workflow
-- publish to npm
-
 # react-native-svgs-to-icon
 
 - Add peer dependencies
-  `yarn add -D patch-package webpack-iconfont-plugin-nodejs`
+  `yarn add -D patch-package webpack-iconfont-plugin-nodejs react-native-asset`
 
 - Add this to `react-native.config.js`
 
-```
-'react-native-svgs-to-icon': {
-    output: './output', // icon components output
-    input: './src/theme/icons/icon-svgs', // svgs folder
-    fontOutput: './output', // font output
-    fontName: 'name', // font name
-  },
-```
+  ```js
+  module.exports = {
+    'react-native-svgs-to-icon': {
+      output: './src/components', // icon components output destination
+      input: './svgs', // svgs folder input destination
+      fontOutput: './fontOutput', // font output destination could put this folder into .gitingore
+      fontName: 'MyFont', // font name
+      fontOutputCopyTo: './src/assets/fonts', // copy font to assets/fonts
+    },
+    assets: ['./src/assets/fonts'],
+  };
+  ```
 
-- sample svgs file
+- Add this into postinstall
 
-```
-<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.4149 17.8596C7.2649 17.2481 8.16683 16.7644 9.12068 16.4087C10.0745 16.0529 11.1072 15.875 12.2188 15.875C13.3303 15.875 14.363 16.0529 15.3168 16.4087C16.2707 16.7644 17.1726 17.2481 18.0226 17.8596C18.6828 17.1763 19.2139 16.3692 19.6159 15.4385C20.0178 14.5077 20.2188 13.4865 20.2188 12.375C20.2188 10.1583 19.4396 8.27083 17.8813 6.7125C16.3229 5.15417 14.4354 4.375 12.2188 4.375C10.0021 4.375 8.11458 5.15417 6.55625 6.7125C4.99792 8.27083 4.21875 10.1583 4.21875 12.375C4.21875 13.4865 4.41971 14.5077 4.82163 15.4385C5.22356 16.3692 5.75465 17.1763 6.4149 17.8596ZM12.2193 12.875C11.3766 12.875 10.6659 12.5858 10.087 12.0073C9.50817 11.4289 9.21875 10.7183 9.21875 9.87558C9.21875 9.03288 9.50798 8.32211 10.0864 7.74327C10.6649 7.16442 11.3755 6.875 12.2182 6.875C13.0609 6.875 13.7716 7.16423 14.3505 7.7427C14.9293 8.32115 15.2188 9.03172 15.2188 9.87442C15.2188 10.7171 14.9295 11.4279 14.3511 12.0067C13.7726 12.5856 13.062 12.875 12.2193 12.875ZM12.2188 21.375C10.9636 21.375 9.78862 21.1413 8.69375 20.674C7.59888 20.2067 6.64632 19.5679 5.83605 18.7577C5.0258 17.9474 4.38702 16.9949 3.9197 15.9C3.4524 14.8051 3.21875 13.6301 3.21875 12.375C3.21875 11.1199 3.4524 9.94487 3.9197 8.85C4.38702 7.75513 5.0258 6.80257 5.83605 5.9923C6.64632 5.18205 7.59888 4.54327 8.69375 4.07595C9.78862 3.60865 10.9636 3.375 12.2188 3.375C13.4739 3.375 14.6489 3.60865 15.7438 4.07595C16.8386 4.54327 17.7912 5.18205 18.6014 5.9923C19.4117 6.80257 20.0505 7.75513 20.5178 8.85C20.9851 9.94487 21.2188 11.1199 21.2188 12.375C21.2188 13.6301 20.9851 14.8051 20.5178 15.9C20.0505 16.9949 19.4117 17.9474 18.6014 18.7577C17.7912 19.5679 16.8386 20.2067 15.7438 20.674C14.6489 21.1413 13.4739 21.375 12.2188 21.375ZM12.2188 20.375C13.1405 20.375 14.0476 20.2138 14.9399 19.8913C15.8322 19.5689 16.6034 19.1276 17.2534 18.5673C16.6034 18.0455 15.8514 17.633 14.9976 17.3298C14.1437 17.0266 13.2175 16.875 12.2188 16.875C11.22 16.875 10.2906 17.0234 9.4303 17.3202C8.57003 17.617 7.82131 18.0327 7.18412 18.5673C7.83412 19.1276 8.60528 19.5689 9.4976 19.8913C10.3899 20.2138 11.297 20.375 12.2188 20.375ZM12.2188 11.875C12.7803 11.875 13.254 11.682 13.6399 11.2962C14.0258 10.9103 14.2188 10.4365 14.2188 9.875C14.2188 9.31347 14.0258 8.83975 13.6399 8.45385C13.254 8.06795 12.7803 7.875 12.2188 7.875C11.6572 7.875 11.1835 8.06795 10.7976 8.45385C10.4117 8.83975 10.2188 9.31347 10.2188 9.875C10.2188 10.4365 10.4117 10.9103 10.7976 11.2962C11.1835 11.682 11.6572 11.875 12.2188 11.875Z" fill="#202428"/>
-</svg>
-```
+  ```
+  "postinstall": "react-native-svgs-to-icon init && patch-package && react-native-svgs-to-icon generate && react-native-asset"
+  ```
 
-- install package
-  `yarn add patch-package webpack-iconfont-plugin-nodejs`
+- Rebuild app with `yarn ios`
 
-- copy package
-  `node node_modules/react-native-svgs-to-icon/lib/init.js`
+- Usage:
 
-- patching
-  `npx patch-package`
-
-- generate icon
-  `node node_modules/react-native-svgs-to-icon/lib/index.js`
-
-- add fonts to react native
-
-```
-  <[generated_name] name="close" size={24} />
-```
+  ```js
+  export default function App() {
+    return <Icon name="keyboard_double_arrow_up" style={{ marginTop: 100 }} size={24} color="green" />;
+  }
+  ```
