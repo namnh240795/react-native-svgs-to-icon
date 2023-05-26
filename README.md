@@ -9,10 +9,10 @@
 
 [![NPM](https://nodei.co/npm/react-native-svgs-to-icon.png?compact=true)](https://nodei.co/npm/react-native-svgs-to-icon/)
 
-- Add peer dependencies
+- Add install peer dependencies
 
   ```
-  yarn add -D patch-package webpack-iconfont-plugin-nodejs react-native-asset
+  yarn add -D patch-package webpack-iconfont-plugin-nodejs react-native-asset react-native-svgs-to-icon
   ```
 
 - Add this to `react-native.config.js`
