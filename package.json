@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write \"./**/*.{js,json}\"",
-    "release": "npm run build && changeset publish"
+    "release": "changeset publish"
   },
   "bin": {
     "react-native-svgs-to-icon": "src/index.js"
