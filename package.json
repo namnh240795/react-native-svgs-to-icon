@@ -3,11 +3,15 @@
   "version": "1.0.2",
   "description": "Package to generate icons",
   "main": "src/index.js",
-  "repository": "https://github.com/namnh240795/react-native-svgs-to-icon.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/namnh240795/react-native-svgs-to-icon.git"
+  },
   "author": "Nam Nguyen <namnh240795@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write \"./**/*.{js,json}\""
+    "format": "prettier --write \"./**/*.{js,json}\"",
+    "release": "npm run build && changeset publish"
   },
   "bin": {
     "react-native-svgs-to-icon": "src/index.js"
@@ -19,8 +23,9 @@
     "webpack-iconfont-plugin-nodejs": "^1.0.29"
   },
   "keywords": [
+    "react native svgs icon",
     "react native generate icon",
-    "generate icon"
+    "react native vector icon"
   ],
   "bugs": {
     "url": "https://github.com/namnh240795/react-native-svgs-to-icon/issues"
