@@ -32,7 +32,7 @@ const generate = () => {
     jsOutput: path.join(dist, 'fonts.json'),
   };
 
-  new WebpackIconfontPluginNodejs(options).build(() => {
+  new WebpackIconfontPluginNodejs(options).build(async () => {
     const json = require(path.join(options.jsOutput));
     if (copyToFolder) {
       fs.copyFileSync(path.join(dist, `${fontName}.ttf`), `${copyToFolder}/${fontName}.ttf`);
@@ -85,7 +85,9 @@ const generate = () => {
   
       `;
 
-    fs.writeFileSync(`${iconFolder}/index.tsx`, prettier.format(content, { parser: 'typescript' }));
+      const formattedContent = await prettier.format(content, { parser: 'typescript' })
+
+    fs.writeFileSync(`${iconFolder}/index.tsx`, formattedContent);
   });
 };
 
